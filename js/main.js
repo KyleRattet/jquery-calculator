@@ -1,30 +1,11 @@
 $( document ).ready(function() {
-    // console.log( "ready!" );
-// var operators
-// var test = $('.operator');
-// var plus = $(test[4]).html();
-// var minus = $(test[3]).html();
-// var multiply = $(test[2]).html();
-// var divide = $(test[1]).html();
-// var operatorArray=[plus,minus,multiply,divide];
 
-//var screen results
-// var screenResults = ($('#screen').html());
-
-///var screen results split on operator
-///returns results array
-
-
-// for (var i = 0; i < operatorArray.length; i++) {
-//   for (var j = 0; j < resultsArray.length; j++) {
-//     (if operatorArray[i] === resultsArray[j]);
-//   };
-// };
 function calc (resultsArray) {
+  //variables
   firstNum = parseInt(resultsArray[0]);
-  operatorInput = resultsArray[2];
-  secondNum = parseInt(resultsArray[4]);
-
+  operatorInput = resultsArray[1];
+  secondNum = parseInt(resultsArray[2]);
+  //if statement to check operator, followed by calculation
     if (operatorInput === "+") {
       return (firstNum + secondNum);
     } else if (operatorInput === "-") {
@@ -36,10 +17,12 @@ function calc (resultsArray) {
     } else return ('wrong');
 }
 
+
+//calculate button
 $('#calc').on('click', function () {
     var operatorArray= ["+", "-", "*", "/"];
     var calcScreen = $('#screen').html();
-    var resultsArray = calcScreen.split("");
+    var resultsArray = calcScreen.split(" ");
     $('#screen').html(calc(resultsArray));
 });
 
@@ -61,6 +44,28 @@ $('#cancel').on('click', function () {
 });
 
 });
+
+    // console.log( "ready!" );
+// var operators
+// var test = $('.operator');
+// var plus = $(test[4]).html();
+// var minus = $(test[3]).html();
+// var multiply = $(test[2]).html();
+// var divide = $(test[1]).html();
+// var operatorArray=[plus,minus,multiply,divide];
+
+//var screen results
+// var screenResults = ($('#screen').html());
+
+///var screen results split on operator
+///returns results array
+
+
+// for (var i = 0; i < operatorArray.length; i++) {
+//   for (var j = 0; j < resultsArray.length; j++) {
+//     (if operatorArray[i] === resultsArray[j]);
+//   };
+// };
 
 //calc (equals) button, get button, on click, takes the screen html and
 //converts to integer
